@@ -1,0 +1,25 @@
+{
+	"name": "char-counter",
+	"version": "0.1.0",
+	"homepage": "https://github.com/benkeen/char-counter",
+	"authors": [
+		"Ben Keen <ben.keen@gmail.com>"
+	],
+	"description": "A re-usable Polymer component for adding a character counter. Can be tied to any existing form field, or creates its own textarea (default)",
+	"keywords": [
+		"polymer",
+		"web-components",
+		"character counter",
+		"character count",
+		"char counter",
+		"char count"
+	],
+	"license": "MIT",
+	"ignore": [
+		"**/.*",
+		"bower_components"
+	],
+	"dependencies": {
+		"polymer": "Polymer/polymer"
+	}
+}

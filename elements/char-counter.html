@@ -1,0 +1,56 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+
+<polymer-element name="char-counter" attributes="fieldId counterLabel">
+	<template>
+		<textarea id="unique" on-keyup="{{onKeyup}}"></textarea>
+		<div>{{counter}}</div>
+	</template>
+	<script>
+		"use strict";
+
+		Polymer("char-counter", {
+
+			// public API
+			fieldId: null,
+			maxChars: null,
+			counterLabel: "{{chars}} chars",
+
+			// private
+			field: null,
+
+			ready: function() {
+				var defaultTextarea = this.shadowRoot.querySelector("#unique");
+
+				if (this.fieldId === null) {
+
+					if (this.innerHTML) {
+						defaultTextarea.value = this.innerHTML;
+					}
+
+					this.field = defaultTextarea;
+					this.updateCounter(this.field.value.length);
+				} else {
+
+					// hide the default textarea
+					defaultTextarea.style.display = "none";
+
+					// check the ID exists and that it's a textbox or textarea
+					this.field = document.getElementById(this.fieldId);
+				}
+			},
+
+			onKeyup: function(e, detail, sender) {
+				this.updateCounter(sender.value.length);
+			},
+
+			// TODO this looks slow...
+			updateCounter: function(count) {
+				this.counter = this.counterLabel.replace(/\{\{chars\}\}/, count);
+			}
+
+
+			// exposed API
+
+		});
+	</script>
+</polymer-element>
