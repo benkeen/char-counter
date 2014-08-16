@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>char-counter - Polymer component</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="site/css/bootstrap.min.css">
+	<link rel="stylesheet" href="site/css/site.css">
+
+	<script src="bower_components/platform/platform.js"></script>
+	<link rel="import" href="elements/char-counter.html">
+
+	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!--[if lt IE 9]>
+	<script src="bower_components/html5shiv/dist/html5shiv.js"></script>
+	<script src="bower_components/respond/dest/respond.min.js"></script>
+	<![endif]-->
+</head>
+<body>
+<div class="navbar navbar-default navbar-fixed-top">
+	<div class="container">
+		<div class="navbar-header">
+			<a href="../" class="navbar-brand">&lt;char-counter&gt;</a>
+			<button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+		</div>
+		<div class="navbar-collapse collapse navbar-right" id="navbar-main">
+			<ul class="nav navbar-nav ">
+				<li><a href="" target="_blank">About</a></li>
+				<li class="active"><a href="" target="_blank">Demos</a></li>
+				<li><a href="" target="_blank">Learn more on Github</a></li>
+			</ul>
+		</div>
+	</div>
+</div>
+
+<div class="container">
+	<div class="page-header" id="banner">
+		<div class="row">
+			<div class="col-lg-8 col-md-7 col-sm-6">
+				<h1>&lt;char-counter&gt; <span>demos</span></h1>
+				<p class="lead">Polymer component</p>
+			</div>
+			<div class="col-lg-4 col-md-5 col-sm-6">
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="container">
+	<div class="row">
+		<div class="col-lg-4">
+			<div class="well well-sm">
+				<a name="example1"></a>
+				<h4>"Out the box" example</h4>
+				<char-counter></char-counter>
+			</div>
+		</div>
+
+		<div class="col-lg-4">
+			<div class="well well-sm">
+				<a name="example2"></a>
+				<h4>Including a default Value</h4>
+				<char-counter>This is my default value!</char-counter>
+			</div>
+		</div>
+
+		<div class="col-lg-4">
+			<div class="well well-sm">
+				<a name="example3"></a>
+				<h4>Linking to your own form field</h4>
+				<textarea id="customTextarea"></textarea>
+				<char-counter fieldId="customTextarea"></char-counter>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="container">
+	<div class="row">
+		<div class="col-lg-4">
+			<div class="well well-sm">
+				<a name="example4"></a>
+				<h4>Custom label!</h4>
+				<char-counter counterLabel="Yegads, you've entered {{chars}} chars!"></char-counter>
+			</div>
+		</div>
+
+		<div class="col-lg-4">
+			<div class="well well-sm">
+				<a name="example5"></a>
+				<h4>Including a default Value</h4>
+				<char-counter>This is my default value!</char-counter>
+			</div>
+		</div>
+
+		<div class="col-lg-4">
+			<div class="well well-sm">
+				<a name="example6"></a>
+				<h4>Linking to your own form field</h4>
+				<textarea id="customTextarea"></textarea>
+				<char-counter fieldId="customTextarea"></char-counter>
+			</div>
+		</div>
+	</div>
+</div>
+
+</body>
+</html>
