@@ -60,3 +60,4 @@ to get around it, don't use the self-closing tag - use the more verbose `<char-c
 ### Left to do:
 - form name attribute & setting.
 - document attributes.
+- maybe explain Polymer a bit too...

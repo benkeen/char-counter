@@ -15,7 +15,7 @@ $(function() {
 			content: "<textarea class=\"form-control\" id=\"customTextarea\"></textarea>\n<char-counter fieldId=\"customTextarea\"></char-counter>"
 		},
 		{
-			title: "Settings a max length",
+			title: "Setting a max length",
 			content: "<char-counter maxChars=\"10\"></char-counter>"
 		},
 		{
@@ -23,7 +23,7 @@ $(function() {
 			content: "<char-counter label=\"Yegads, you've entered [CHARS] chars!\"></char-counter>"
 		},
 		{
-			title: "Custom Styling",
+			title: "Custom styling",
 			content: "<char-counter class=\"customStyle\"></char-counter>\n\n"
 				+ "<style type=\"text/css\">\n"
 				+ "char-counter.customStyle::shadow textarea {\n"
