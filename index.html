@@ -72,8 +72,7 @@
 	<div class="row">
 		<div class="col-lg-4">
 			<div class="well well-sm">
-				<a name="example1"></a>
-				<a href="#" class="btn btn-sm pull-right btn-primary" data-toggle="modal" data-target="#exampleModal1">View code</a>
+				<a href="#" class="btn btn-sm pull-right btn-primary viewCode" data-example="1">View code</a>
 				<h4>"Out the box" example</h4>
 				<char-counter></char-counter>
 			</div>
@@ -81,17 +80,15 @@
 
 		<div class="col-lg-4">
 			<div class="well well-sm">
-				<a name="example2"></a>
-				<a href="#" class="btn btn-sm pull-right btn-primary">View code</a>
-				<h4>Including a default Value</h4>
+				<a href="#" class="btn btn-sm pull-right btn-primary viewCode" data-example="2">View code</a>
+				<h4>Setting a default value</h4>
 				<char-counter>This has a default value.</char-counter>
 			</div>
 		</div>
 
 		<div class="col-lg-4">
 			<div class="well well-sm">
-				<a name="example3"></a>
-				<a href="#" class="btn btn-sm pull-right btn-primary">View code</a>
+				<a href="#" class="btn btn-sm pull-right btn-primary viewCode" data-example="3">View code</a>
 				<h4>Linking to your own form field</h4>
 				<textarea class="form-control" id="customTextarea"></textarea>
 				<char-counter fieldId="customTextarea"></char-counter>
@@ -104,8 +101,7 @@
 	<div class="row">
 		<div class="col-lg-4">
 			<div class="well well-sm">
-				<a name="example4"></a>
-				<a href="#" class="btn btn-sm pull-right btn-primary">View code</a>
+				<a href="#" class="btn btn-sm pull-right btn-primary viewCode" data-example="4">View code</a>
 				<h4>Setting a max length</h4>
 				<char-counter maxChars="10"></char-counter>
 			</div>
@@ -113,30 +109,15 @@
 
 		<div class="col-lg-4">
 			<div class="well well-sm">
-				<a name="example5"></a>
-				<a href="#" class="btn btn-sm pull-right btn-primary">View code</a>
-				<h4>Custom label!</h4>
-				<char-counter label="Yegads, you've entered {{chars}} chars!"></char-counter>
+				<a href="#" class="btn btn-sm pull-right btn-primary viewCode" data-example="5">View code</a>
+				<h4>Custom counter labels</h4>
+				<char-counter label="Yegads, you've entered [CHARS] chars!"></char-counter>
 			</div>
 		</div>
 
 		<div class="col-lg-4">
 			<div class="well well-sm">
-				<a name="example6"></a>
-				<a href="#" class="btn btn-sm pull-right btn-primary">View code</a>
-				<h4>Custom label that includes max length</h4>
-				<char-counter label="You've entered {{chars}} of {{maxChars}}"></char-counter>
-			</div>
-		</div>
-	</div>
-</div>
-
-<div class="container">
-	<div class="row">
-		<div class="col-lg-4">
-			<div class="well well-sm">
-				<a name="example7"></a>
-				<a href="#" class="btn btn-sm pull-right btn-primary">View code</a>
+				<a href="#" class="btn btn-sm pull-right btn-primary viewCode" data-example="6">View code</a>
 				<h4>Custom styling</h4>
 				<char-counter class="customStyle"></char-counter>
 			</div>
@@ -156,20 +137,22 @@
 		Check out the <a href="https://github.com/benkeen/char-counter/">github documentation</a> for installation
 		instructions and explanation on the available features.
 	</p>
+
+	<div class="section"></div>
 </div>
 
 
 <!-- modals -->
 
-<div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-hidden="true">
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-hidden="true">
 	<div class="modal-dialog">
 		<div class="modal-content">
 			<div class="modal-header">
 				<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-				<h4 class="modal-title" id="myModalLabel">"Out the box" example</h4>
+				<h4 class="modal-title" id="modalTitle"></h4>
 			</div>
 			<div class="modal-body">
-				&lt;char-counter&gt;&lt;/char-counter&gt;
+				<pre id="modalContent"></pre>
 			</div>
 			<div class="modal-footer">
 				<button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
@@ -178,8 +161,21 @@
 	</div>
 </div>
 
+
+<footer>
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-12">
+				<p>Bootswatch <a href="bootswatch.com/superhero/">Superhero theme</a> by <a href="http://thomaspark.me" rel="nofollow">Thomas Park</a>.
+			</div>
+		</div>
+	</div>
+</footer>
+
+
 <script src="site/js/jquery.min.js"></script>
 <script src="site/js/bootstrap.min.js"></script>
+<script src="site/js/site.js"></script>
 
 </body>
 </html>

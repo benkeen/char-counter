@@ -58,3 +58,8 @@ char-counter.customStyle::shadow div {
 	font-weight: bold;
 	text-shadow: 1px 1px #999999;
 }
+
+
+footer {
+	margin-top: 50px;
+}

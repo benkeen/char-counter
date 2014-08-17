@@ -18,6 +18,12 @@ can be mapped to an existing input field / textarea in your form just by passing
 - Translatable. You can customize the character counter label to whatever you want to read, which by default reads
 simply **N chars**.
 
+### Usage
+
+Using the tag is really easy. Just
+
+```<char-counter></char-counter>```
+
 
 #### How to Style
 
@@ -49,3 +55,8 @@ char-counter::shadow div {
 - For some reason, using a self-closing `<char-counter />` tag results in a few space/tab characters being included,
 so the label appears as "4 chars" (noticed on Chrome). I suspect this is a minor Polymer bug, but I'm not sure. So
 to get around it, don't use the self-closing tag - use the more verbose `<char-counter></char-counter>`.
+
+
+### Left to do:
+- form name attribute & setting.
+- document attributes.

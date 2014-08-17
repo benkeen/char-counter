@@ -21,6 +21,11 @@
 			ready: function() {
 				var defaultTextarea = this.shadowRoot.querySelector("#charCounter");
 
+				// if the user supplied a custom label containing [CHARS], switch it out for the
+				if (/\[CHARS\]/.test(this.label)) {
+					this.label = this.label.replace(/\[CHARS\]/, "{{chars}}");
+				}
+
 				// no outside element has been targetted as the textbox / textarea - use our own!
 				if (this.fieldId === null) {
 					if (this.innerHTML) {
