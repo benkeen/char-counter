@@ -18,8 +18,9 @@
 	"ignore": [
 		"**/.*",
 		"bower_components",
-		"demo",
-		"index.html"
+		"site",
+		"index.html",
+		"update_gh_pages.sh"
 	],
 	"dependencies": {
 		"polymer": "Polymer/polymer"
