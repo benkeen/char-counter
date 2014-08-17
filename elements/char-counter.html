@@ -1,9 +1,9 @@
 <link rel="import" href="../bower_components/polymer/polymer.html">
 
-<polymer-element name="char-counter" attributes="fieldId counterLabel maxChars">
+<polymer-element name="char-counter" attributes="fieldId label maxChars">
 	<template>
-		<textarea id="unique" on-keyup="{{onKeyup}}"></textarea>
-		<div>{{counter}}</div>
+		<textarea id="charCounter" on-keyup="{{onUpdate}}" on-paste="{{onUpdate}}" on-blur="{{onUpdate}}"></textarea>
+		<label>{{counter}}</label>
 	</template>
 	<script>
 		"use strict";
@@ -13,13 +13,13 @@
 			// public API
 			fieldId: null,
 			maxChars: null,
-			counterLabel: "{{chars}} chars",
+			label: "{{chars}} chars",
 
 			// private
 			field: null,
 
 			ready: function() {
-				var defaultTextarea = this.shadowRoot.querySelector("#unique");
+				var defaultTextarea = this.shadowRoot.querySelector("#charCounter");
 
 				// no outside element has been targetted as the textbox / textarea - use our own!
 				if (this.fieldId === null) {
@@ -33,24 +33,24 @@
 					// check the ID exists and that it's a textbox or textarea
 					this.field = document.getElementById(this.fieldId);
 					var self = this;
-					this.on(this.field, "keyup", function(e) {
-						self.updateCounter(e.target.value.length);
-					});
+					var updateFunction = function(e) { self.updateCounter(e.target.value.length); };
+					this.on(this.field, "keyup", updateFunction);
+					this.on(this.field, "blur", updateFunction);
 				}
 				this.updateCounter(this.field.value.length);
 			},
 
-			onKeyup: function(e, detail, sender) {
+			onUpdate: function(e, detail, sender) {
 				this.updateCounter(sender.value.length);
 			},
 
 			// TODO this looks slow...
 			updateCounter: function(count) {
-				this.counter = this.counterLabel.replace(/\{\{chars\}\}/, count);
-
 				if (this.maxChars !== null && count > this.maxChars) {
 					this.field.value = this.field.value.substring(0, this.maxChars);
+					count = this.maxChars;
 				}
+				this.counter = this.label.replace(/\{\{chars\}\}/, count);
 			},
 
 			/**

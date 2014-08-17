@@ -56,10 +56,10 @@
 	<h1>About</h1>
 
 	<p>
-		Adding a character counter to your form fields can be kind of a pain. Now with the convenience of web components, all you
-		need to do is include a single <span class="btn-char-counter">&lt;char-counter /&gt;</span> field.
-		Check out the examples below to see what sort of customizations the component offers, then check out the
-		<a href="https://github.com/benkeen/char-counter/">documentation</a> for further info.
+		This is a simple drop-in web component that lets you add a character counter to your web form through
+		a <span class="btn-char-counter">&lt;char-counter&gt;</span> tag. Check out the examples below to see what sort
+		of customizations the component offers, then check out the <a href="https://github.com/benkeen/char-counter/">documentation</a>
+		for further info.
 	</p>
 
 	<div class="section"></div>
@@ -116,7 +116,7 @@
 				<a name="example5"></a>
 				<a href="#" class="btn btn-sm pull-right btn-primary">View code</a>
 				<h4>Custom label!</h4>
-				<char-counter counterLabel="Yegads, you've entered {{chars}} chars!"></char-counter>
+				<char-counter label="Yegads, you've entered {{chars}} chars!"></char-counter>
 			</div>
 		</div>
 
@@ -125,7 +125,7 @@
 				<a name="example6"></a>
 				<a href="#" class="btn btn-sm pull-right btn-primary">View code</a>
 				<h4>Custom label that includes max length</h4>
-				<char-counter counterLabel="You've entered {{chars}} of {{maxChars}}"></char-counter>
+				<char-counter label="You've entered {{chars}} of {{maxChars}}"></char-counter>
 			</div>
 		</div>
 	</div>
@@ -138,7 +138,7 @@
 				<a name="example7"></a>
 				<a href="#" class="btn btn-sm pull-right btn-primary">View code</a>
 				<h4>Custom styling</h4>
-				<char-counter></char-counter>
+				<char-counter class="customStyle"></char-counter>
 			</div>
 		</div>
 	</div>

@@ -46,3 +46,15 @@ h1 {
 p {
 	line-height: 28px;
 }
+
+char-counter.customStyle::shadow textarea {
+	width: 98%;
+	height: 100px;
+	color: red;
+	background-color: #cccccc;
+}
+char-counter.customStyle::shadow label {
+	color: black;
+	font-weight: bold;
+	text-shadow: 1px 1px #999999;
+}

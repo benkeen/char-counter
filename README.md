@@ -18,9 +18,30 @@ simply **N chars**.
 
 #### How to Style
 
-Polymer components can be styled via standard CSS. Take a look at the demo for an example of this, but here's
+Polymer components can be styled via standard CSS. By default the default textarea that appears when no ID is specified
+is unstyled, so it'll appear with whatever width and height your browser natively supplies. Here's how you can style
+the elements.
+
+##### The textarea (only if you don't supply an ID of your own input field)
+
+```css
+char-counter::shadow textarea {
+	width: 100%;
+	height: 100px;
+	color: red;
+}
+```
+
+##### The label
+
+```css
+char-counter::shadow label {
+	color: green;
+}
+```
 
 
-#### API
+#### Known issues
 
-...
+- For some reason, using a self-closing `<char-counter />` tag results in a few space/tab characters being output as
+a default value. I suspect this is a minor Polymer bug, but I'm not sure. So to get around it, always
