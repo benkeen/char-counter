@@ -3,7 +3,7 @@
 <polymer-element name="char-counter" attributes="fieldId label maxChars">
 	<template>
 		<textarea id="charCounter" on-keyup="{{onUpdate}}" on-paste="{{onUpdate}}" on-blur="{{onUpdate}}"></textarea>
-		<label>{{counter}}</label>
+		<div>{{counter}}</div>
 	</template>
 	<script>
 		"use strict";
@@ -74,11 +74,11 @@
 				}
 				// Browser don't support W3C or MSFT model, go on with traditional
 				else {
-					evt = 'on'+evt;
+					evt = 'on' + evt;
 					if(typeof obj[evt] === 'function'){
 						// Object already has a function on traditional
 						// Let's wrap it with our own function inside another function
-						fnc = (function(f1,f2){
+						fnc = (function(f1, f2){
 							return function(){
 								f1.apply(this,arguments);
 								f2.apply(this,arguments);
@@ -90,9 +90,6 @@
 				}
 				return false;
 			}
-
-			// exposed API
-
 		});
 	</script>
 </polymer-element>

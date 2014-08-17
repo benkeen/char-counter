@@ -53,7 +53,7 @@ char-counter.customStyle::shadow textarea {
 	color: red;
 	background-color: #cccccc;
 }
-char-counter.customStyle::shadow label {
+char-counter.customStyle::shadow div {
 	color: black;
 	font-weight: bold;
 	text-shadow: 1px 1px #999999;

@@ -1,6 +1,9 @@
+[ WORK IN PROGRESS... COME BACK TOMORROW ]
+
 # char-counter
 
-A simple, configurable Polymer component for adding a character counter to your form fields.
+A simple, configurable Polymer component for adding a character counter to your form fields. Check out the
+demo here: [http://benkeen.github.io/char-counter](http://benkeen.github.io/char-counter)
 
 #### New to Polymer?
 
@@ -35,7 +38,7 @@ char-counter::shadow textarea {
 ##### The label
 
 ```css
-char-counter::shadow label {
+char-counter::shadow div {
 	color: green;
 }
 ```
@@ -43,5 +46,6 @@ char-counter::shadow label {
 
 #### Known issues
 
-- For some reason, using a self-closing `<char-counter />` tag results in a few space/tab characters being output as
-a default value. I suspect this is a minor Polymer bug, but I'm not sure. So to get around it, always
+- For some reason, using a self-closing `<char-counter />` tag results in a few space/tab characters being included,
+so the label appears as "4 chars" (noticed on Chrome). I suspect this is a minor Polymer bug, but I'm not sure. So
+to get around it, don't use the self-closing tag - use the more verbose `<char-counter></char-counter>`.
