@@ -1,7 +1,6 @@
-## char-counter
+# char-counter
 
-A super simple, powerful and re-usable Polymer component for adding a character counter to your form.
-
+A simple, configurable Polymer component for adding a character counter to your form fields.
 
 #### New to Polymer?
 
@@ -10,7 +9,7 @@ You can read about the Polymer project here:
 
 #### Features
 
-- By default this component is completely self-contained and creates its own textarea as well as the counter, but it
+- The "out the box" component (i.e. `<char-counter />`) is completely self-contained and creates its own textarea as well as the counter, but it
 can be mapped to an existing input field / textarea in your form just by passing its unique ID.
 - Has a maxChars option to prevent the user entering too many chars.
 - Translatable. You can customize the character counter label to whatever you want to read, which by default reads

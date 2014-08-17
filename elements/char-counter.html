@@ -37,7 +37,6 @@
 						self.updateCounter(e.target.value.length);
 					});
 				}
-
 				this.updateCounter(this.field.value.length);
 			},
 
@@ -48,6 +47,10 @@
 			// TODO this looks slow...
 			updateCounter: function(count) {
 				this.counter = this.counterLabel.replace(/\{\{chars\}\}/, count);
+
+				if (this.maxChars !== null && count > this.maxChars) {
+					this.field.value = this.field.value.substring(0, this.maxChars);
+				}
 			},
 
 			/**

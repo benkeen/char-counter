@@ -5,7 +5,7 @@
 	"authors": [
 		"Ben Keen <ben.keen@gmail.com>"
 	],
-	"description": "A re-usable Polymer component for adding a character counter. Can be tied to any existing form field, or creates its own textarea (default)",
+	"description": "A simple, configurable Polymer component for adding a character counter to your form fields.",
 	"keywords": [
 		"polymer",
 		"web-components",
