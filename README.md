@@ -1,4 +1,4 @@
-# &lt;char-counter&gt;
+# &lt;char-counter /&gt;
 
 A simple, configurable Polymer component for adding a character counter to your form fields. Check out the
 demo here: [http://benkeen.github.io/char-counter](http://benkeen.github.io/char-counter)
@@ -10,15 +10,24 @@ You can read about the Polymer project here:
 
 #### Features
 
-- The ``<char-counter />`` can be mapped to &lt;textarea> or &lt;input> fields.
-- Has a maxChars option to prevent the user entering too many chars.
+- Can be mapped to &lt;textarea> or &lt;input> fields.
+- Has a ``maxChars`` option to prevent the user entering too many chars.
 - Translatable. You can customize the character counter label to whatever you want to read. By default reads
 simply **N chars**.
 
 ### Usage
 
-Using the tag is really easy. Just place it wherever you want in the page and specify the textarea or textfield you want the
-counter to apply to.
+Using the tag is really easy.
+
+1. Include the Polymer platform and the char-counter custom element:
+
+```
+<script src="bower_components/platform/platform.js"></script>
+<link rel="import" href="elements/char-counter.html">
+```
+
+2. Place the element wherever you want in the page and specify the textarea or textfield you want the counter to
+apply to.
 
 ```
 <char-counter target="yourId" />
