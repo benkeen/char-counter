@@ -20,15 +20,12 @@ simply **N chars**.
 Using the tag is really easy.
 
 1. Include the Polymer platform and the char-counter custom element:
-
 ```
 <script src="bower_components/platform/platform.js"></script>
 <link rel="import" href="elements/char-counter.html">
 ```
-
 2. Place the element wherever you want in the page and specify the textarea or textfield you want the counter to
 apply to.
-
 ```
 <char-counter target="yourId" />
 ```
