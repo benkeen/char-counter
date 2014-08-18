@@ -1,4 +1,4 @@
-# char-counter
+# &lt;char-counter&gt;
 
 A simple, configurable Polymer component for adding a character counter to your form fields. Check out the
 demo here: [http://benkeen.github.io/char-counter](http://benkeen.github.io/char-counter)
@@ -42,8 +42,3 @@ char-counter::shadow div {
 	color: green;
 }
 ```
-
-### Left to do:
-- document attributes.
-- oops. Index.html should have a "download" / how to install link
-- responsive. Fix nav on small screen size.
