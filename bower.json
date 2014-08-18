@@ -12,7 +12,9 @@
 		"character counter",
 		"character count",
 		"char counter",
-		"char count"
+		"char count",
+		"input",
+		"forms"
 	],
 	"license": "MIT",
 	"ignore": [
