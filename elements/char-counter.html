@@ -1,8 +1,7 @@
 <link rel="import" href="../bower_components/polymer/polymer.html">
 
-<polymer-element name="char-counter" attributes="fieldId label maxChars">
+<polymer-element name="char-counter" attributes="target label maxChars">
 	<template>
-		<textarea id="charCounter" on-keyup="{{onUpdate}}" on-paste="{{onUpdate}}" on-blur="{{onUpdate}}"></textarea>
 		<div>{{counter}}</div>
 	</template>
 	<script>
@@ -11,7 +10,7 @@
 		Polymer("char-counter", {
 
 			// public API
-			fieldId: null,
+			target: null,
 			maxChars: null,
 			label: "{{chars}} chars",
 
@@ -19,37 +18,29 @@
 			field: null,
 
 			ready: function() {
-				var defaultTextarea = this.shadowRoot.querySelector("#charCounter");
+				if (this.target === null) {
+					console.log("missing target attribute for <char-counter> tag");
+					return;
+				} else if (!document.getElementById(this.target)) {
+					console.log("invalid target attribute for <char-counter> tag: " + this.target);
+					return;
+				}
 
 				// if the user supplied a custom label containing [CHARS], switch it out for the
 				if (/\[CHARS\]/.test(this.label)) {
 					this.label = this.label.replace(/\[CHARS\]/, "{{chars}}");
 				}
 
-				// no outside element has been targetted as the textbox / textarea - use our own!
-				if (this.fieldId === null) {
-					if (this.innerHTML) {
-						defaultTextarea.value = this.innerHTML;
-					}
-					this.field = defaultTextarea;
-				} else {
-					defaultTextarea.style.display = "none";
+				// check the ID exists and that it's a textbox or textarea
+				this.field = document.getElementById(this.target);
+				var self = this;
+				var updateFunction = function(e) { self.updateCounter(e.target.value.length); };
+				this.on(this.field, "keyup", updateFunction);
+				this.on(this.field, "blur", updateFunction);
 
-					// check the ID exists and that it's a textbox or textarea
-					this.field = document.getElementById(this.fieldId);
-					var self = this;
-					var updateFunction = function(e) { self.updateCounter(e.target.value.length); };
-					this.on(this.field, "keyup", updateFunction);
-					this.on(this.field, "blur", updateFunction);
-				}
 				this.updateCounter(this.field.value.length);
 			},
 
-			onUpdate: function(e, detail, sender) {
-				this.updateCounter(sender.value.length);
-			},
-
-			// TODO this looks slow...
 			updateCounter: function(count) {
 				if (this.maxChars !== null && count > this.maxChars) {
 					this.field.value = this.field.value.substring(0, this.maxChars);
@@ -80,11 +71,11 @@
 				// Browser don't support W3C or MSFT model, go on with traditional
 				else {
 					evt = 'on' + evt;
-					if(typeof obj[evt] === 'function'){
+					if (typeof obj[evt] === 'function') {
 						// Object already has a function on traditional
 						// Let's wrap it with our own function inside another function
-						fnc = (function(f1, f2){
-							return function(){
+						fnc = (function(f1, f2) {
+							return function() {
 								f1.apply(this,arguments);
 								f2.apply(this,arguments);
 							}

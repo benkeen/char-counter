@@ -1,5 +1,3 @@
-[ WORK IN PROGRESS... COME BACK TOMORROW ]
-
 # char-counter
 
 A simple, configurable Polymer component for adding a character counter to your form fields. Check out the
@@ -12,36 +10,32 @@ You can read about the Polymer project here:
 
 #### Features
 
-- The "out the box" component (i.e. `<char-counter />`) is completely self-contained and creates its own textarea as well as the counter, but it
-can be mapped to an existing input field / textarea in your form just by passing its unique ID.
+- The ``<char-counter />`` can be mapped to &lt;textarea> or &lt;input> fields.
 - Has a maxChars option to prevent the user entering too many chars.
-- Translatable. You can customize the character counter label to whatever you want to read, which by default reads
+- Translatable. You can customize the character counter label to whatever you want to read. By default reads
 simply **N chars**.
 
 ### Usage
 
-Using the tag is really easy. Just
+Using the tag is really easy. Just place it wherever you want in the page and specify the textarea or textfield you want the
+counter to apply to.
 
-```<char-counter></char-counter>```
+```
+<char-counter target="yourId" />
+```
+
+### Attributes
+
+- ``target`` - **required**. The ID of the input or textarea field.
+- ``maxChars`` - **optional**. The max number of characters allowed in the textarea / input field.
+- ``label`` - **optional**. The text that appears for the counter. Use the placeholder *[CHARS]* inside your string - it
+will be replaced by the actual character count.
 
 
 #### How to Style
 
-Polymer components can be styled via standard CSS. By default the default textarea that appears when no ID is specified
-is unstyled, so it'll appear with whatever width and height your browser natively supplies. Here's how you can style
-the elements.
-
-##### The textarea (only if you don't supply an ID of your own input field)
-
-```css
-char-counter::shadow textarea {
-	width: 100%;
-	height: 100px;
-	color: red;
-}
-```
-
-##### The label
+Polymer components can be styled via standard CSS. The &lt;char-counter&gt; element contains a single &lt;div&gt;
+element containing the label.
 
 ```css
 char-counter::shadow div {
@@ -49,15 +43,7 @@ char-counter::shadow div {
 }
 ```
 
-
-#### Known issues
-
-- For some reason, using a self-closing `<char-counter />` tag results in a few space/tab characters being included,
-so the label appears as "4 chars" (noticed on Chrome). I suspect this is a minor Polymer bug, but I'm not sure. So
-to get around it, don't use the self-closing tag - use the more verbose `<char-counter></char-counter>`.
-
-
 ### Left to do:
-- form name attribute & setting.
 - document attributes.
-- maybe explain Polymer a bit too...
+- oops. Index.html should have a "download" / how to install link
+- responsive. Fix nav on small screen size.

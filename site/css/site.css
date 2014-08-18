@@ -59,7 +59,9 @@ char-counter.customStyle::shadow div {
 	text-shadow: 1px 1px #999999;
 }
 
-
 footer {
 	margin-top: 50px;
+}
+.container .form-control {
+	margin-bottom: 4px;
 }

@@ -57,7 +57,7 @@
 
 	<p>
 		This is a simple drop-in web component that lets you add a character counter to your web form through
-		a <span class="btn-char-counter">&lt;char-counter&gt;</span> tag. Check out the examples below to see what sort
+		a <span class="btn-char-counter">&lt;char-counter /&gt;</span> tag. Check out the examples below to see what sort
 		of customizations the component offers, then check out the <a href="https://github.com/benkeen/char-counter/">documentation</a>
 		for further info.
 	</p>
@@ -74,24 +74,26 @@
 			<div class="well well-sm">
 				<a href="#" class="btn btn-sm pull-right btn-primary viewCode" data-example="1">View code</a>
 				<h4>"Out the box" example</h4>
-				<char-counter></char-counter>
+				<textarea class="form-control" id="example1"></textarea>
+				<char-counter target="example1" />
 			</div>
 		</div>
 
 		<div class="col-lg-4">
 			<div class="well well-sm">
 				<a href="#" class="btn btn-sm pull-right btn-primary viewCode" data-example="2">View code</a>
-				<h4>Setting a default value</h4>
-				<char-counter>This has a default value.</char-counter>
+				<h4>Works with a default value</h4>
+				<textarea class="form-control" id="example2">This has a default value.</textarea>
+				<char-counter target="example2" />
 			</div>
 		</div>
 
 		<div class="col-lg-4">
 			<div class="well well-sm">
 				<a href="#" class="btn btn-sm pull-right btn-primary viewCode" data-example="3">View code</a>
-				<h4>Linking to your own form field</h4>
-				<textarea class="form-control" id="customTextarea"></textarea>
-				<char-counter fieldId="customTextarea"></char-counter>
+				<h4>Works with &lt;input&gt;'s too</h4>
+				<input class="form-control" id="example3"></textarea>
+				<char-counter target="example3" />
 			</div>
 		</div>
 	</div>
@@ -103,7 +105,8 @@
 			<div class="well well-sm">
 				<a href="#" class="btn btn-sm pull-right btn-primary viewCode" data-example="4">View code</a>
 				<h4>Setting a max length</h4>
-				<char-counter maxChars="10"></char-counter>
+				<textarea class="form-control" id="example4"></textarea>
+				<char-counter target="example4" maxChars="10" />
 			</div>
 		</div>
 
@@ -111,7 +114,8 @@
 			<div class="well well-sm">
 				<a href="#" class="btn btn-sm pull-right btn-primary viewCode" data-example="5">View code</a>
 				<h4>Custom counter labels</h4>
-				<char-counter label="Yegads, you've entered [CHARS] chars!"></char-counter>
+				<textarea class="form-control" id="example5"></textarea>
+				<char-counter target="example5" label="Yegads, you've entered [CHARS] chars!" />
 			</div>
 		</div>
 
@@ -119,11 +123,13 @@
 			<div class="well well-sm">
 				<a href="#" class="btn btn-sm pull-right btn-primary viewCode" data-example="6">View code</a>
 				<h4>Custom styling</h4>
-				<char-counter class="customStyle"></char-counter>
+				<textarea class="form-control" id="example6"></textarea>
+				<char-counter class="customStyle" target="example6" />
 			</div>
 		</div>
 	</div>
 </div>
+
 
 <div class="container">
 	<div class="section"></div>

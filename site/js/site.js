@@ -1,37 +1,30 @@
 $(function() {
 
-	// very sucky, but quick
 	var data = [
 		{
 			title: "\"Out the box\" example",
-			content: "<char-counter></char-counter>"
+			content: "<textarea id=\"example1\"></textarea>\n<char-counter target=\"example1\" />"
 		},
 		{
 			title: "Setting a default value",
-			content: "<char-counter>This has a default value.</char-counter>"
+			content: "<textarea id=\"example2\">This has a default value.</textarea>\n<char-counter target=\"example2\" />"
 		},
 		{
 			title: "Linking to your own form field",
-			content: "<textarea class=\"form-control\" id=\"customTextarea\"></textarea>\n<char-counter fieldId=\"customTextarea\"></char-counter>"
+			content: "<input type=\"text\" id=\"example3\" />\n<char-counter target=\"example3\" />"
 		},
 		{
 			title: "Setting a max length",
-			content: "<char-counter maxChars=\"10\"></char-counter>"
+			content: "<textarea id=\"example4\"></textarea>\n<char-counter target=\"example4\" maxChars=\"10\" />"
 		},
 		{
 			title: "Custom counter labels",
-			content: "<char-counter label=\"Yegads, you've entered [CHARS] chars!\"></char-counter>"
+			content: "<textarea id=\"example5\"></textarea>\n<char-counter target=\"example5\" label=\"Yegads, you've entered [CHARS] chars!\" />"
 		},
 		{
 			title: "Custom styling",
-			content: "<char-counter class=\"customStyle\"></char-counter>\n\n"
+			content: "<textarea class=\"form-control\" id=\"example6\"></textarea>\n<char-counter class=\"customStyle\" target=\"example6\" />"
 				+ "<style type=\"text/css\">\n"
-				+ "char-counter.customStyle::shadow textarea {\n"
-				+ "   width: 98%;\n"
-				+ "   height: 100px;\n"
-				+ "   color: red;\n"
-				+ "   background-color: #cccccc;\n"
-				+ "}\n"
 				+ "char-counter.customStyle::shadow div {\n"
 				+ "   color: black;\n"
 				+ "   font-weight: bold;\n"
@@ -44,14 +37,9 @@ $(function() {
 
 	$(document).on("click", ".viewCode", function(e) {
 		e.preventDefault();
-
 		var index = parseInt($(e.target).data("example"), 10) - 1;
-
-		// now open dialog
-
 		$("#modalTitle").html(data[index].title);
 		$("#modalContent").html(htmlEntities(data[index].content));
-
 		$("#exampleModal").modal("show");
 	});
 
